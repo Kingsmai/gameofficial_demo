@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="完善前端界面" />
+    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="创建后端项目">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/GameofficialBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/GameofficialBackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/test/java/com/tootaio/gameofficialbackend/GameofficialBackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/test/java/com/tootaio/gameofficialbackend/GameofficialBackendApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +27,8 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/gameofficial-backend" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -30,30 +39,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Xiaomai/Documents/IdeaProjects/gameofficial_demo/gameofficial-frontend/src/assets/background",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Xiaomai/Documents/IdeaProjects/gameofficial_demo/gameofficial-frontend/src/assets/background&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Composition API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Xiaomai\Documents\IdeaProjects\gameofficial_demo\gameofficial-frontend\src\assets\background" />
@@ -66,7 +76,14 @@
       <recent name="C:\Users\Xiaomai\Documents\IdeaProjects\gameofficial_demo\gameofficial-frontend\src\pages\main" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.GameofficialBackendApplication">
+    <configuration name="GameofficialBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="gameofficial-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tootaio.gameofficialbackend.GameofficialBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/gameofficial-frontend/package.json" />
       <command value="run" />
@@ -86,7 +103,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683689459875</updated>
-      <workItem from="1683689460889" duration="23429000" />
+      <workItem from="1683689460889" duration="23541000" />
+      <workItem from="1683717428257" duration="171000" />
+      <workItem from="1683717858757" duration="153000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1683689803177</created>
@@ -102,15 +121,34 @@
       <option name="project" value="LOCAL" />
       <updated>1683715070933</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="创建后端项目">
+      <created>1683717343819</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683717343819</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="完善前端界面" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善前端界面" />
+    <MESSAGE value="创建后端项目" />
+    <option name="LAST_COMMIT_MESSAGE" value="创建后端项目" />
   </component>
 </project>
