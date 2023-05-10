@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="创建后端项目">
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/GameofficialBackendApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/RestBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/test/java/com/tootaio/gameofficialbackend/GameofficialBackendApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="创建后端项目，配置 Spring Security">
+      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/AuthorizeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/AuthorizeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/AuthorizeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +25,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="Vue Composition API Component" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -56,36 +50,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Xiaomai/Documents/IdeaProjects/gameofficial_demo/gameofficial-backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Xiaomai/Documents/IdeaProjects/gameofficial_demo/gameofficial-backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Composition API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Xiaomai\Documents\IdeaProjects\gameofficial_demo\gameofficial-frontend\src\assets\background" />
@@ -132,7 +126,7 @@
       <workItem from="1683689460889" duration="23541000" />
       <workItem from="1683717428257" duration="171000" />
       <workItem from="1683717858757" duration="735000" />
-      <workItem from="1683718603759" duration="2023000" />
+      <workItem from="1683718603759" duration="8802000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1683689803177</created>
@@ -176,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683718199063</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="创建后端项目，配置 Spring Security">
+      <created>1683722994295</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683722994295</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +198,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="完善前端界面" />
     <MESSAGE value="创建后端项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="创建后端项目" />
+    <MESSAGE value="创建后端项目，配置 Spring Security" />
+    <option name="LAST_COMMIT_MESSAGE" value="创建后端项目，配置 Spring Security" />
   </component>
 </project>

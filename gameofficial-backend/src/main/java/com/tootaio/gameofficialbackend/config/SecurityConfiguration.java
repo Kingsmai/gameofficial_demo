@@ -2,11 +2,14 @@ package com.tootaio.gameofficialbackend.config;
 
 import com.alibaba.fastjson2.JSON;
 import com.tootaio.gameofficialbackend.entity.RestBean;
+import com.tootaio.gameofficialbackend.service.AuthorizeService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.Authentication;
@@ -24,6 +27,9 @@ import java.io.IOException;
 @EnableWebSecurity
 public class SecurityConfiguration {
     @Resource
+    AuthorizeService authorizeService;
+
+    @Resource
     DataSource dataSource;
 
     @Bean
@@ -37,13 +43,20 @@ public class SecurityConfiguration {
                 .successHandler(this::onAuthenticationSuccess)
                 .failureHandler(this::onAuthenticationFailure)
                 .and()
-                .logout().logoutUrl("/api/auth/login")
+                .logout().logoutUrl("/api/auth/logout")
                 .logoutSuccessHandler(this::onAuthenticationSuccess)
                 .and()
                 .csrf().disable()
                 .cors().configurationSource(this.corsConfigurationSource())
                 .and()
                 .exceptionHandling().authenticationEntryPoint(this::onAuthenticationFailure)
+                .and().build();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(HttpSecurity security) throws Exception {
+        return security.getSharedObject(AuthenticationManagerBuilder.class)
+                .userDetailsService(authorizeService)
                 .and().build();
     }
 
