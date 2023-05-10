@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/gameofficial-backend/gameofficial-backend.iml" filepath="$PROJECT_DIR$/gameofficial-backend/gameofficial-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gameofficial-frontend/gameofficial-frontend.iml" filepath="$PROJECT_DIR$/gameofficial-frontend/gameofficial-frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/gameofficial_demo.iml" filepath="$PROJECT_DIR$/gameofficial_demo.iml" />
     </modules>
   </component>
