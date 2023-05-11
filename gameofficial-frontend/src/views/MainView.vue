@@ -5,8 +5,11 @@ import router from "@/router";
 import {useAuthStore} from "@/stores/authStore";
 import {get} from "@/net";
 import {ElMessage} from "element-plus";
+import {ref} from "vue";
 
 const authStore = useAuthStore();
+
+const searchContent = ref('');
 
 const logout = () => {
     get("/api/auth/logout", (message) => {
@@ -14,6 +17,17 @@ const logout = () => {
         authStore.clearUserInfo();
         router.push("/welcome");
     })
+}
+
+/**
+ *
+ * @param e {KeyboardEvent}
+ */
+const handleSearchBox = (e) => {
+    if (e.key === "Enter") {
+        // 执行查询
+        router.push({path: "/search", query: {q: searchContent.value}})
+    }
 }
 </script>
 
@@ -26,7 +40,9 @@ const logout = () => {
         </div>
         <nav>
             <div style="width: 250px">
-                <el-input type="text" :prefix-icon="Search"
+                <el-input v-model="searchContent"
+                          @keydown="handleSearchBox"
+                          type="search" :prefix-icon="Search"
                           placeholder="请输入搜索内容"/>
             </div>
             <div class="menu-bar">

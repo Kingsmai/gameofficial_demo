@@ -3,6 +3,7 @@ import BlogItem from "@/components/main/BlogItem.vue";
 import {ref} from "vue";
 import {get} from "@/net";
 import {getPostTime} from "@/utils";
+import SidebarBlogListItem from "@/components/main/SidebarBlogListItem.vue";
 
 const blogList = ref([])
 
@@ -32,6 +33,7 @@ getBlogList();
         <el-row :gutter="10" style="margin-top: 16px">
             <el-col :span="18">
                 <blog-item v-for="blog in blogList"
+                           :id="blog.title"
                            :header="blog.title"
                            :post-time="getPostTime(blog.postTime)"
                            :tags="blog.tags"
@@ -41,6 +43,10 @@ getBlogList();
             <el-col :span="6">
                 <el-card>
                     <h1>博客一览表</h1>
+                    <div class="blog-list" style="margin-top: 16px;">
+                        <sidebar-blog-list-item v-for="blog in blogList"
+                                                :blog-title="blog.title"/>
+                    </div>
                 </el-card>
             </el-col>
         </el-row>
