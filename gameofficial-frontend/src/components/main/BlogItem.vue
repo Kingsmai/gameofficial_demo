@@ -21,6 +21,11 @@ export default {
             type: String,
             required: true
         }
+    },
+    methods: {
+        getParagraphs(content) {
+            return content.split('\n');
+        }
     }
 }
 </script>
@@ -34,8 +39,10 @@ export default {
                 <el-tag v-for="tagContent in tags">{{ tagContent }}</el-tag>
             </div>
             <el-image :src="image" v-if="image != null"></el-image>
-            <div class="blog-content">
-                {{ content }}
+            <div class="blog-content" style="margin-top: 16px">
+                <p v-for="paragraph in getParagraphs(content)">
+                    {{ paragraph }}
+                </p>
             </div>
         </el-card>
     </div>
@@ -48,5 +55,10 @@ export default {
 
 .el-tag {
     margin-right: 8px;
+}
+
+p {
+    margin: 8px 0;
+    text-indent: 2ch;
 }
 </style>

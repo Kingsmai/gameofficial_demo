@@ -58,6 +58,9 @@ export default {
                 // 当请求成功，删除本组件
                 this.$emit('delete');
             })
+        },
+        getParagraphs(content) {
+            return content.split('\n');
         }
     }
 }
@@ -76,8 +79,10 @@ export default {
                     <div style="font-size: 0.9rem; font-style: italic; color: grey">{{ postTime }}</div>
                 </div>
             </div>
-            <div class="post-content" style="margin-top: 16px;">
-                {{ content }}
+            <div class="post-content" style="margin-top: 16px">
+                <p v-for="paragraph in getParagraphs(content)">
+                    {{ paragraph }}
+                </p>
             </div>
             <div class="post-tags" style="margin-top: 16px">
                 <el-tag v-for="tag in tags" style="margin-right: 8px">{{ tag }}</el-tag>
