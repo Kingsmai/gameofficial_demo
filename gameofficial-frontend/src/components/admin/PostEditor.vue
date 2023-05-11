@@ -10,7 +10,7 @@ const blogId = route.query.blogId;
 
 const isEditMode = blogId != null;
 
-ElMessage.info(isEditMode ? "编辑模式" : "新增博客模式")
+ElMessage.warning(isEditMode ? "编辑模式" : "新增博客模式")
 
 const form = reactive({
     title: '',
@@ -64,7 +64,9 @@ const getPostInfo = () => {
     })
 }
 
-getPostInfo();
+if (isEditMode) {
+    getPostInfo();
+}
 </script>
 
 <template>
