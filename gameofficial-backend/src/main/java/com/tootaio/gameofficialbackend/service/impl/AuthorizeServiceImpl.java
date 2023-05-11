@@ -1,6 +1,6 @@
 package com.tootaio.gameofficialbackend.service.impl;
 
-import com.tootaio.gameofficialbackend.entity.Account;
+import com.tootaio.gameofficialbackend.entity.auth.Account;
 import com.tootaio.gameofficialbackend.mapper.UserMapper;
 import com.tootaio.gameofficialbackend.service.AuthorizeService;
 import jakarta.annotation.Resource;
