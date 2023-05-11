@@ -20,6 +20,17 @@ public class CommunityPostController {
         return RestBean.success(communityPostService.getAllCommunityPosts());
     }
 
+    @PostMapping("/get")
+    public RestBean<List<CommunityPost>> getCommunityPostByPage(@RequestParam("pageSize") int pageSize,
+                                                                @RequestParam("pageNumber") int pageNumber) {
+        // 获取总数据
+        int totalRecord = communityPostService.getTotalRecord();
+        return RestBean.success(
+                communityPostService.getPostByPage(pageSize, pageNumber),
+                pageSize, pageNumber, totalRecord
+        );
+    }
+
     @PostMapping("/post")
     public RestBean<String> createNewPost(@SessionAttribute("account") UserAccount account,
                                           @RequestParam("content") String content) {

@@ -21,6 +21,22 @@ public interface CommunityPostMapper {
             ORDER BY postTime DESC""")
     List<CommunityPost> getAllPosts();
 
+    @Select("""
+            SELECT community_post.id,
+                   community_post.userId,
+                   account.username,
+                   community_post.postTime,
+                   community_post.content
+            FROM community_post
+                     JOIN account ON community_post.userId = account.id
+            ORDER BY postTime DESC
+            LIMIT #{pageSize} OFFSET #{offset}""")
+    List<CommunityPost> getPostByPage(int pageSize, int offset);
+
+    // 获取总数居量
+    @Select("SELECT COUNT(1) FROM community_post")
+    int getTotalRecordCount();
+
     // 发帖
     @Insert("INSERT INTO community_post (userId, content) VALUE (#{userId}, #{content})")
     int CreateNewPost(int userId, String content);

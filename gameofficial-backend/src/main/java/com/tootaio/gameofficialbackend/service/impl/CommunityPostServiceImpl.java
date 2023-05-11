@@ -35,6 +35,21 @@ public class CommunityPostServiceImpl implements CommunityPostService {
     }
 
     @Override
+    public List<CommunityPost> getPostByPage(int pageSize, int pageNumber) {
+        int offset = (pageSize * pageNumber) - pageSize;
+        List<CommunityPost> posts = communityPostMapper.getPostByPage(pageSize, offset);
+        for (CommunityPost post : posts) {
+            post.setTags(postHashtagMapper.getHashtagsByCommunityPostId(post.getId()));
+        }
+        return posts;
+    }
+
+    @Override
+    public int getTotalRecord() {
+        return communityPostMapper.getTotalRecordCount();
+    }
+
+    @Override
     public String createNewPost(UserAccount user, String content) {
         int insertResult = communityPostMapper.CreateNewPost(user.getId(), content);
         if (insertResult < 0) {

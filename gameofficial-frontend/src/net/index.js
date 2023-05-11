@@ -15,7 +15,12 @@ function post(url, data, success, failure = defaultFailure, error = defaultError
         withCredentials: true // 带上 cookie。后期学习 jwt 之后使用别的方式作为用户身份验证
     }).then(({data}) => {
         if (data.success) {
-            success(data.message, data.status);
+            let pageInfo = {
+                pageSize: data.pageSize,
+                pageNumber: data.pageNumber,
+                totalRecords: data.totalRecords
+            }
+            success(data.message, pageInfo, data.status);
         } else {
             failure(data.message, data.status);
         }
@@ -27,7 +32,12 @@ function get(url, success, failure = defaultFailure, error = defaultError) {
         withCredentials: true // 带上 cookie。后期学习 jwt 之后使用别的方式作为用户身份验证
     }).then(({data}) => {
         if (data.success) {
-            success(data.message, data.status);
+            let pageInfo = {
+                pageSize: data.pageSize,
+                pageNumber: data.pageNumber,
+                totalRecords: data.totalRecords
+            }
+            success(data.message, pageInfo, data.status);
         } else {
             failure(data.message, data.status);
         }

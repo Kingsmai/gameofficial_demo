@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="渲染段落换行">
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" afterDir="false" />
+    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="建立搜索界面">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/bean/RestBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/bean/RestBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +20,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Composition API Component" />
         <option value="Interface" />
         <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Vue Composition API Component" />
       </list>
     </option>
   </component>
@@ -142,7 +147,7 @@
       <workItem from="1683717428257" duration="171000" />
       <workItem from="1683717858757" duration="735000" />
       <workItem from="1683718603759" duration="8802000" />
-      <workItem from="1683762545597" duration="37034000" />
+      <workItem from="1683762545597" duration="43244000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1683689803177</created>
@@ -291,7 +296,35 @@
       <option name="project" value="LOCAL" />
       <updated>1683801822058</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="记住七天登录">
+      <created>1683803321827</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1683803321827</updated>
+    </task>
+    <task id="LOCAL-00023" summary="完善侧边栏">
+      <created>1683806756171</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1683806756171</updated>
+    </task>
+    <task id="LOCAL-00024" summary="完善侧边栏">
+      <created>1683807384496</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1683807384496</updated>
+    </task>
+    <task id="LOCAL-00025" summary="建立搜索界面">
+      <created>1683807394425</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1683807394425</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +359,10 @@
     <MESSAGE value="发布博客功能实现" />
     <MESSAGE value="发布博客功能实现" />
     <MESSAGE value="渲染段落换行" />
-    <option name="LAST_COMMIT_MESSAGE" value="渲染段落换行" />
+    <MESSAGE value="记住七天登录" />
+    <MESSAGE value="添加搜索界面" />
+    <MESSAGE value="完善侧边栏" />
+    <MESSAGE value="建立搜索界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="建立搜索界面" />
   </component>
 </project>
