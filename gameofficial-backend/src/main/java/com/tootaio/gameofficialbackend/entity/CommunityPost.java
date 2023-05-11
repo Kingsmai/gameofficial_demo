@@ -1,7 +1,5 @@
 package com.tootaio.gameofficialbackend.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Table;
 import lombok.Data;
 
 import java.sql.Timestamp;

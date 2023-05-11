@@ -9,14 +9,15 @@ import java.util.List;
 
 @Mapper
 public interface CommunityPostMapper {
-    @Select("SELECT community_post.id,\n" +
-            "       community_post.userId,\n" +
-            "       account.username,\n" +
-            "       community_post.postTime,\n" +
-            "       community_post.content\n" +
-            "FROM community_post\n" +
-            "         JOIN account ON community_post.userId = account.id\n" +
-            "ORDER BY postTime DESC")
+    @Select("""
+            SELECT community_post.id,
+                   community_post.userId,
+                   account.username,
+                   community_post.postTime,
+                   community_post.content
+            FROM community_post
+                     JOIN account ON community_post.userId = account.id
+            ORDER BY postTime DESC""")
     List<CommunityPost> getAllPosts();
 
     // 发帖
