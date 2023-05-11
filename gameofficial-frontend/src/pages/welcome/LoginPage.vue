@@ -11,13 +11,15 @@ const authStore = useAuthStore();
 
 const form = reactive({
     username: '',
-    password: ''
+    password: '',
+    remember: false
 })
 
 const login = () => {
     post("/api/auth/login", {
         username: form.username,
-        password: form.password
+        password: form.password,
+        remember: form.remember,
     }, (message) => {
         ElMessage.success(message);
         get("/api/user/me", (message) => {
@@ -42,6 +44,9 @@ const login = () => {
             <el-form-item>
                 <el-input :prefix-icon="Lock" placeholder="请输入密码"
                           v-model="form.password"/>
+            </el-form-item>
+            <el-form-item>
+                <el-checkbox v-model="form.remember" label="记住我"/>
             </el-form-item>
         </el-form>
         <el-button type="primary"

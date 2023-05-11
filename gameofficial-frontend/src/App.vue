@@ -8,16 +8,14 @@ const authStore = useAuthStore()
 let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 authStore.setUserInfo(userInfo);
 
-if (!authStore.isLoggedIn()) {
-    get("/api/user/me",
-        (message) => {
-            authStore.setUserInfo(message);
-        },
-        () => {
-            authStore.clearUserInfo();
-        }
-    )
-}
+get("/api/user/me",
+    (message) => {
+        authStore.setUserInfo(message);
+    },
+    () => {
+        authStore.clearUserInfo();
+    }
+)
 </script>
 
 <template>
