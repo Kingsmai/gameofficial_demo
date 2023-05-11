@@ -8,4 +8,8 @@ public class UserAccount {
     String email;
     String username;
     int roleId;
+
+    public boolean isAdmin() {
+        return roleId == 0;
+    }
 }

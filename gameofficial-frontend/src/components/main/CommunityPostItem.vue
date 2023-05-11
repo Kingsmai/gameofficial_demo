@@ -1,5 +1,7 @@
 <script>
 import {DeleteFilled, EditPen} from "@element-plus/icons-vue";
+import {ElMessage} from "element-plus";
+import {post} from "@/net";
 
 export default {
     computed: {
@@ -46,7 +48,13 @@ export default {
             return '#' + hexString.slice(0, 6);
         },
         deletePost() {
-            console.log(`删除 PostId 为 ${this.postId} 的帖子`)
+            post("/api/post/delete", {
+                postId: this.postId
+            }, (message) => {
+                ElMessage.success(message);
+                // 当请求成功，删除本组件
+                this.$emit('delete');
+            })
         }
     }
 }
@@ -65,7 +73,7 @@ export default {
                     <div style="font-size: 0.9rem; font-style: italic; color: grey">{{ postTime }}</div>
                 </div>
             </div>
-            <div class="post-content">
+            <div class="post-content" style="margin-top: 16px;">
                 {{ content }}
             </div>
             <div style="margin-top: 10px">

@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="展示帖子接口">
+    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="Code Analysis">
       <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/UserAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/components/main/CommunityPostItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/components/main/CommunityPostItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +148,7 @@
       <workItem from="1683717428257" duration="171000" />
       <workItem from="1683717858757" duration="735000" />
       <workItem from="1683718603759" duration="8802000" />
-      <workItem from="1683762545597" duration="12972000" />
+      <workItem from="1683762545597" duration="17144000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1683689803177</created>
@@ -224,7 +227,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683775177323</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="完善发布帖子功能">
+      <created>1683778518832</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683778518832</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Code Analysis">
+      <created>1683778601982</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683778601982</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +267,8 @@
     <MESSAGE value="添加用户信息获取接口" />
     <MESSAGE value="登录登出功能，网页权限拦截跳转" />
     <MESSAGE value="展示帖子接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="展示帖子接口" />
+    <MESSAGE value="完善发布帖子功能" />
+    <MESSAGE value="Code Analysis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Analysis" />
   </component>
 </project>

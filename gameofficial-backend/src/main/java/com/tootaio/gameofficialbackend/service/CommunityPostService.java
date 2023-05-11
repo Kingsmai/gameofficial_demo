@@ -9,4 +9,6 @@ public interface CommunityPostService {
     List<CommunityPost> getAllCommunityPosts();
 
     boolean createNewPost(UserAccount user, String content);
+
+    String deletePostById(UserAccount user, int postId);
 }

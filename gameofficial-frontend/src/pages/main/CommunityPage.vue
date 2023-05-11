@@ -47,6 +47,11 @@ const createNewPost = () => {
         ElMessage.error("不能发布空帖子");
     }
 }
+
+const handlePostDelete = () => {
+    // 重新获取帖子列表即可
+    getPostList()
+}
 </script>
 
 <template>
@@ -84,7 +89,8 @@ const createNewPost = () => {
                              :username="post.username"
                              :post-time="getPostTime(post.postTime)"
                              :content="post.content"
-                             :can-delete="authStore.isAdmin() || authStore.getUserId() === post.userId"/>
+                             :can-delete="authStore.isAdmin() || authStore.getUserId() === post.userId"
+                             @delete="handlePostDelete"/>
     </div>
 </template>
 

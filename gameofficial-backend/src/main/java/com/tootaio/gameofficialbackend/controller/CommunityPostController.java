@@ -29,4 +29,15 @@ public class CommunityPostController {
             return RestBean.failure("发帖失败，请联系管理员");
         }
     }
+
+    @PostMapping("/delete")
+    public RestBean<String> deletePostById(@SessionAttribute("account") UserAccount account,
+                                           @RequestParam("postId") int postId) {
+        String errorMessage = communityPostService.deletePostById(account, postId);
+        if (errorMessage == null) {
+            return RestBean.success("删帖成功");
+        } else {
+            return RestBean.failure(errorMessage);
+        }
+    }
 }
