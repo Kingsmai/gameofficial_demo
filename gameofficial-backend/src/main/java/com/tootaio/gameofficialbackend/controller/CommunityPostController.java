@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/post")
+@RequestMapping("/api/community")
 public class CommunityPostController {
     @Resource
     CommunityPostService communityPostService;

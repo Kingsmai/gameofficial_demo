@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="增加删除帖子功能">
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/HashtagMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/PostHashtagMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/utils/HashtagExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="实现 hashtag 功能">
+      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/BlogPostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/BlogPost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/BlogPostMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/BlogPostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/BlogPostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/WebConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/CommunityPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/CommunityPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/components/main/CommunityPostItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/components/main/CommunityPostItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +26,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Vue Composition API Component" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -151,7 +151,7 @@
       <workItem from="1683717428257" duration="171000" />
       <workItem from="1683717858757" duration="735000" />
       <workItem from="1683718603759" duration="8802000" />
-      <workItem from="1683762545597" duration="24673000" />
+      <workItem from="1683762545597" duration="26647000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1683689803177</created>
@@ -251,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683782748946</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="实现 hashtag 功能">
+      <created>1683788950522</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683788950522</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +287,7 @@
     <MESSAGE value="完善发布帖子功能" />
     <MESSAGE value="Code Analysis" />
     <MESSAGE value="增加删除帖子功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加删除帖子功能" />
+    <MESSAGE value="实现 hashtag 功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现 hashtag 功能" />
   </component>
 </project>

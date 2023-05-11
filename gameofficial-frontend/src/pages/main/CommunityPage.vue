@@ -4,6 +4,7 @@ import {useAuthStore} from "@/stores/authStore";
 import {reactive, ref} from "vue";
 import {get, post} from "@/net";
 import {ElMessage} from "element-plus";
+import {getPostTime} from "@/utils";
 
 const authStore = useAuthStore()
 
@@ -16,27 +17,16 @@ const postList = ref([])
 
 const getPostList = () => {
 // 获取帖子
-    get("/api/post/get", (message) => {
+    get("/api/community/get", (message) => {
         postList.value = message;
     })
 }
 
 getPostList()
 
-const getPostTime = (postTime) => {
-    let time = new Date(postTime);
-    let year = time.getFullYear();
-    let month = String(time.getMonth() + 1).padStart(2, '0')
-    let date = String(time.getDate()).padStart(2, '0')
-    let hours = String(time.getHours()).padStart(2, '0')
-    let minutes = String(time.getMinutes()).padStart(2, '0')
-    // return postTime;
-    return `${year}年${month}月${date} ${hours}时${minutes}分`
-}
-
 const createNewPost = () => {
     if (form.postContent.trim() !== '') {
-        post('/api/post/newPost', {
+        post('/api/community/newPost', {
             content: form.postContent
         }, (message) => {
             ElMessage.success(message);

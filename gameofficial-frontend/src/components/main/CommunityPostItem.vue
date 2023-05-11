@@ -51,7 +51,7 @@ export default {
             return '#' + hexString.slice(0, 6);
         },
         deletePost() {
-            post("/api/post/delete", {
+            post("/api/community/delete", {
                 postId: this.postId
             }, (message) => {
                 ElMessage.success(message);

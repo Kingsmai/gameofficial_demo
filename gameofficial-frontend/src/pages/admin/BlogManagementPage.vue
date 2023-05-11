@@ -2,17 +2,19 @@
 
 import {Plus} from "@element-plus/icons-vue";
 import router from "@/router";
+import {ref} from "vue";
+import {get} from "@/net";
+import {getPostTime} from "../../utils";
 
-const blogData = [
-    {
-        blogTitle: "官网上线啦！",
-        postDate: "2023年5月10日 12点29分"
-    },
-    {
-        blogTitle: "游戏持续开发中",
-        postDate: "2023年5月10日 16点27分",
-    }
-]
+const blogList = ref([])
+
+const getBlogList = () => {
+    get("api/blog/get", (message) => {
+        blogList.value = message;
+    })
+}
+
+getBlogList();
 </script>
 
 <template>
@@ -25,13 +27,17 @@ const blogData = [
                 <el-button :icon="Plus" type="primary" @click="router.push('/admin/post-editor')">发布新内容</el-button>
             </div>
         </div>
-        <el-table :data="blogData" style="width: 100%">
+        <el-table :data="blogList" style="width: 100%">
             <el-table-column prop="blogTitle" label="博客标题">
                 <template #default="scope">
-                    <span style="font-weight: bold">{{ scope.row.blogTitle }}</span>
+                    <span style="font-weight: bold">{{ scope.row.title }}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="postDate" label="发布时间" width="256"/>
+            <el-table-column label="发布时间" width="256">
+                <template #default="scope">
+                    <span>{{ getPostTime(scope.row.postTime)}}</span>
+                </template>
+            </el-table-column>
             <el-table-column fixed="right" label="操作" width="128">
                 <template #default>
                     <el-button link type="primary" size="small" @click="router.push('/admin/post-editor')">

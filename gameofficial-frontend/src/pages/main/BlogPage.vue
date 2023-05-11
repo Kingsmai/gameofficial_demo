@@ -1,6 +1,18 @@
 <script setup>
-
 import BlogItem from "@/components/main/BlogItem.vue";
+import {ref} from "vue";
+import {get} from "@/net";
+import {getPostTime} from "@/utils";
+
+const blogList = ref([])
+
+const getBlogList = () => {
+    get("api/blog/get", (message) => {
+        blogList.value = message;
+    })
+}
+
+getBlogList();
 </script>
 
 <template>
@@ -19,17 +31,11 @@ import BlogItem from "@/components/main/BlogItem.vue";
 
         <el-row :gutter="10" style="margin-top: 16px">
             <el-col :span="18">
-                <blog-item header="游戏持续开发中"
-                           post-time="2023年5月10日 12点29分"
+                <blog-item v-for="blog in blogList"
+                           :header="blog.title"
+                           :post-time="getPostTime(blog.postTime)"
                            :tags="['开发日志', '程序员日常干架']"
-                           image="https://i.imgur.com/X5A1mAA.jpeg"
-                           content="这是一段废话"
-                />
-
-                <blog-item header="游戏持续开发中"
-                           post-time="2023年5月10日 12点29分"
-                           :tags="['发牢骚']"
-                           content="这是一段废话"
+                           :content="blog.content"
                 />
             </el-col>
             <el-col :span="6">

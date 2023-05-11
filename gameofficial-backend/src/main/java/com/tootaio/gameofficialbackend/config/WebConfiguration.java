@@ -12,7 +12,8 @@ import java.util.List;
 public class WebConfiguration implements WebMvcConfigurer {
     final List<String> PATH_TO_EXCLUDE = List.of(
             "/api/auth/**",
-            "/api/post/**"
+            "/api/community/**",
+            "/api/blog/**"
     );
 
     @Resource
