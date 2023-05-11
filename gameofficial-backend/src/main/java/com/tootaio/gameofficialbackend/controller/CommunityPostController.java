@@ -23,10 +23,11 @@ public class CommunityPostController {
     @PostMapping("/newPost")
     public RestBean<String> createNewPost(@SessionAttribute("account") UserAccount account,
                                           @RequestParam("content") String content) {
-        if (communityPostService.createNewPost(account, content)) {
+        String errorMessage = communityPostService.createNewPost(account, content);
+        if (errorMessage == null) {
             return RestBean.success("发帖成功");
         } else {
-            return RestBean.failure("发帖失败，请联系管理员");
+            return RestBean.failure(errorMessage);
         }
     }
 

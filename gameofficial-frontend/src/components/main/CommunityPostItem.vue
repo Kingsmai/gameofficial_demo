@@ -32,6 +32,9 @@ export default {
         canDelete: {
             type: Boolean,
             required: true,
+        },
+        tags: {
+            type: Array,
         }
     },
     methods: {
@@ -75,6 +78,9 @@ export default {
             </div>
             <div class="post-content" style="margin-top: 16px;">
                 {{ content }}
+            </div>
+            <div class="post-tags" style="margin-top: 16px">
+                <el-tag v-for="tag in tags" style="margin-right: 8px">{{ tag }}</el-tag>
             </div>
             <div style="margin-top: 10px">
                 <el-button v-if="canDelete" @click="deletePost"

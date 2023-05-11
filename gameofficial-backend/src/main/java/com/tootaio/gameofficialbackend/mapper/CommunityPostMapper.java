@@ -39,4 +39,8 @@ public interface CommunityPostMapper {
     // 删除帖子
     @Delete("DELETE FROM community_post WHERE id = #{postId}")
     int DeletePostById(int postId);
+
+    // 获取最新帖子 ID
+    @Select("SELECT id FROM community_post ORDER BY id DESC LIMIT 1")
+    int getLatestPostId();
 }

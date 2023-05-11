@@ -89,6 +89,7 @@ const handlePostDelete = () => {
                              :username="post.username"
                              :post-time="getPostTime(post.postTime)"
                              :content="post.content"
+                             :tags="post.tags"
                              :can-delete="authStore.isAdmin() || authStore.getUserId() === post.userId"
                              @delete="handlePostDelete"/>
     </div>
