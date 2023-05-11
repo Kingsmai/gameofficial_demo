@@ -3,6 +3,21 @@ import {useAuthStore} from "@/stores/authStore";
 import {ElMessage} from "element-plus";
 
 const router = createRouter({
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        } else if (to.hash) {
+            return {
+                el: to.hash,
+                behavior: 'smooth'
+            };
+        } else {
+            return {
+                top: 0,
+                behavior: 'smooth'
+            }
+        }
+    },
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
@@ -24,6 +39,11 @@ const router = createRouter({
                     path: 'game-intro',
                     name: 'game introduction',
                     component: () => import("@/pages/main/GameIntroPage.vue")
+                },
+                {
+                    path: 'search',
+                    name: 'search',
+                    component: () => import("@/pages/main/SearchPage.vue")
                 }
             ]
         },
