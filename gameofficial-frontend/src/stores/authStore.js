@@ -8,10 +8,12 @@ export const useAuthStore = defineStore('auth', () => {
 
     const setUserInfo = (userInfo) => {
         auth.user = userInfo;
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
     }
 
     const clearUserInfo = () => {
         auth.user = null;
+        localStorage.removeItem("userInfo");
     }
 
     const getUsername = () => {
@@ -30,7 +32,9 @@ export const useAuthStore = defineStore('auth', () => {
         }
     };
 
-    const isLoggedIn = () => auth.user != null;
+    const isLoggedIn = () => {
+        return auth.user != null;
+    }
 
     const isAdmin = () => {
         if (isLoggedIn()) {

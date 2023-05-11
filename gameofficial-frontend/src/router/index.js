@@ -1,5 +1,6 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import {useAuthStore} from "@/stores/authStore";
+import {ElMessage} from "element-plus";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -65,14 +66,17 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     const authStore = useAuthStore();
-    if (authStore.isLoggedIn() && to.name.startsWith("welcome-")) {
+    if (authStore.isLoggedIn() && to.name.startsWith("welcome")) {
         // 用户已经登录
+        ElMessage.error("405：您已登录，自动为您跳转")
         next('/')
     } else if (!authStore.isAdmin() && to.fullPath.startsWith('/admin')) {
         // 普通用户访问管理员界面
+        ElMessage.error(`401：您${authStore.isAdmin() ? "是" : "不是"}管理员，无权限访问此界面`)
         next('/')
     } else if (to.matched.length === 0) {
-        // 访问不存在的页面
+        // 访问不存在的页
+        ElMessage.error("404：查无此页面")
         next('/')
     } else {
         next()
