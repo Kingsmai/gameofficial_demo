@@ -1,6 +1,7 @@
 package com.tootaio.gameofficialbackend.mapper;
 
 import com.tootaio.gameofficialbackend.entity.CommunityPost;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -16,5 +17,9 @@ public interface CommunityPostMapper {
             "FROM community_post\n" +
             "         JOIN account ON community_post.userId = account.id\n" +
             "ORDER BY postTime DESC")
-    List<CommunityPost> getAllCommunityPosts();
+    List<CommunityPost> getAllPosts();
+
+    // 发帖
+    @Insert("INSERT INTO community_post (userId, content) VALUE (#{userId}, #{content})")
+    int CreateNewPost(int userId, String content);
 }

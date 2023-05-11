@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="登录登出功能，网页权限拦截跳转">
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/CommunityPost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/WebConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/AuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/AuthorizeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/RestBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/bean/RestBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/test/java/com/tootaio/gameofficialbackend/GameofficialBackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/test/java/com/tootaio/gameofficialbackend/GameofficialBackendApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/components/main/CommunityPostItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/components/main/CommunityPostItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/stores/authStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/stores/authStore.js" afterDir="false" />
+    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="展示帖子接口">
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +66,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "c6f2d1eed48c0f4d5c08dec01c633607",
     "vue.rearranger.settings.migration": "true"
   },
@@ -157,7 +145,7 @@
       <workItem from="1683717428257" duration="171000" />
       <workItem from="1683717858757" duration="735000" />
       <workItem from="1683718603759" duration="8802000" />
-      <workItem from="1683762545597" duration="10838000" />
+      <workItem from="1683762545597" duration="12972000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1683689803177</created>
@@ -229,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683768602652</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="展示帖子接口">
+      <created>1683775177323</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683775177323</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +249,7 @@
     <MESSAGE value="添加注册，登录，修改密码接口" />
     <MESSAGE value="添加用户信息获取接口" />
     <MESSAGE value="登录登出功能，网页权限拦截跳转" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录登出功能，网页权限拦截跳转" />
+    <MESSAGE value="展示帖子接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="展示帖子接口" />
   </component>
 </project>

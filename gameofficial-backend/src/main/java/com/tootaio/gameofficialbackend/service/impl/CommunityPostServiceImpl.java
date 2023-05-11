@@ -1,6 +1,7 @@
 package com.tootaio.gameofficialbackend.service.impl;
 
 import com.tootaio.gameofficialbackend.entity.CommunityPost;
+import com.tootaio.gameofficialbackend.entity.UserAccount;
 import com.tootaio.gameofficialbackend.mapper.CommunityPostMapper;
 import com.tootaio.gameofficialbackend.service.CommunityPostService;
 import jakarta.annotation.Resource;
@@ -15,6 +16,11 @@ public class CommunityPostServiceImpl implements CommunityPostService {
 
     @Override
     public List<CommunityPost> getAllCommunityPosts() {
-        return communityPostMapper.getAllCommunityPosts();
+        return communityPostMapper.getAllPosts();
+    }
+
+    @Override
+    public boolean createNewPost(UserAccount user, String content) {
+        return communityPostMapper.CreateNewPost(user.getId(), content) > 0;
     }
 }

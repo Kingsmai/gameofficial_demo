@@ -1,12 +1,11 @@
 package com.tootaio.gameofficialbackend.controller;
 
 import com.tootaio.gameofficialbackend.entity.CommunityPost;
+import com.tootaio.gameofficialbackend.entity.UserAccount;
 import com.tootaio.gameofficialbackend.entity.bean.RestBean;
 import com.tootaio.gameofficialbackend.service.CommunityPostService;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,5 +18,15 @@ public class CommunityPostController {
     @GetMapping("/get")
     public RestBean<List<CommunityPost>> getAllCommunityPost() {
         return RestBean.success(communityPostService.getAllCommunityPosts());
+    }
+
+    @PostMapping("/newPost")
+    public RestBean<String> createNewPost(@SessionAttribute("account") UserAccount account,
+                                          @RequestParam("content") String content) {
+        if (communityPostService.createNewPost(account, content)) {
+            return RestBean.success("发帖成功");
+        } else {
+            return RestBean.failure("发帖失败，请联系管理员");
+        }
     }
 }

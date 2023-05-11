@@ -1,17 +1,27 @@
 <script setup>
 import CommunityPostItem from "@/components/main/CommunityPostItem.vue";
 import {useAuthStore} from "@/stores/authStore";
-import {ref} from "vue";
-import {get} from "@/net";
+import {reactive, ref} from "vue";
+import {get, post} from "@/net";
+import {ElMessage} from "element-plus";
 
 const authStore = useAuthStore()
 
+const formRef = ref();
+const form = reactive({
+    postContent: ''
+})
+
 const postList = ref([])
 
+const getPostList = () => {
 // 获取帖子
-get("/api/post/get", (message) => {
-    postList.value = message;
-})
+    get("/api/post/get", (message) => {
+        postList.value = message;
+    })
+}
+
+getPostList()
 
 const getPostTime = (postTime) => {
     let time = new Date(postTime);
@@ -23,6 +33,20 @@ const getPostTime = (postTime) => {
     // return postTime;
     return `${year}年${month}月${date} ${hours}时${minutes}分`
 }
+
+const createNewPost = () => {
+    if (form.postContent.trim() !== '') {
+        post('/api/post/newPost', {
+            content: form.postContent
+        }, (message) => {
+            ElMessage.success(message);
+            form.postContent = '';
+            getPostList();
+        })
+    } else {
+        ElMessage.error("不能发布空帖子");
+    }
+}
 </script>
 
 <template>
@@ -33,17 +57,25 @@ const getPostTime = (postTime) => {
                 欢迎回来！{{ authStore.getUsername() }}，今天有什么想分享的吗？
             </div>
             <div style="margin-bottom: 16px" v-if="!authStore.isLoggedIn()">欢迎游客，请登录后再发帖</div>
-            <el-row :gutter="16">
-                <el-col :span="20">
-                    <el-input type="textarea"
-                              :autosize="{minRows: 2, maxRows: 4}"
-                              placeholder="说点什么把~"
-                              :disabled="!authStore.isLoggedIn()"/>
-                </el-col>
-                <el-col :span="4">
-                    <el-button type="primary" style="height: 100%; width: 100%">发布帖子</el-button>
-                </el-col>
-            </el-row>
+            <el-form ref="formRef"
+                     :model="form">
+                <el-row :gutter="16">
+                    <el-col :span="20">
+                        <el-form-item prop="postContent">
+                            <el-input type="textarea" v-model="form.postContent"
+                                      :autosize="{minRows: 2, maxRows: 4}"
+                                      placeholder="说点什么把~"
+                                      :disabled="!authStore.isLoggedIn()"/>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-button @click="createNewPost"
+                                   :disabled="!authStore.isLoggedIn()"
+                                   type="primary" style="height: calc(100% - 18px); width: 100%">发布帖子
+                        </el-button>
+                    </el-col>
+                </el-row>
+            </el-form>
         </el-card>
 
 
