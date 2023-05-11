@@ -1,6 +1,6 @@
 package com.tootaio.gameofficialbackend.controller;
 
-import com.tootaio.gameofficialbackend.entity.RestBean;
+import com.tootaio.gameofficialbackend.entity.bean.RestBean;
 import com.tootaio.gameofficialbackend.service.AuthorizeService;
 import jakarta.annotation.Resource;
 import jakarta.validation.constraints.Pattern;

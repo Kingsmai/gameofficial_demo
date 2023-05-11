@@ -14,6 +14,22 @@ export const useAuthStore = defineStore('auth', () => {
         auth.user = null;
     }
 
+    const getUsername = () => {
+        if (isLoggedIn()) {
+            return auth.user.username;
+        } else {
+            return "游客"
+        }
+    };
+
+    const getUserId = () => {
+        if (isLoggedIn()) {
+            return auth.user.id;
+        } else {
+            return 0;
+        }
+    };
+
     const isLoggedIn = () => auth.user != null;
 
     const isAdmin = () => {
@@ -25,11 +41,14 @@ export const useAuthStore = defineStore('auth', () => {
 
     }
 
+
     return {
         auth,
         setUserInfo,
         clearUserInfo,
         isLoggedIn,
-        isAdmin
+        isAdmin,
+        getUsername,
+        getUserId
     }
 })

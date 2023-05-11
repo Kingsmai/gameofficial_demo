@@ -1,4 +1,4 @@
-package com.tootaio.gameofficialbackend.entity;
+package com.tootaio.gameofficialbackend.entity.bean;
 
 import lombok.Data;
 

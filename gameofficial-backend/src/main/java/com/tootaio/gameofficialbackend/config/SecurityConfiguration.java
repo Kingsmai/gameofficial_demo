@@ -1,7 +1,7 @@
 package com.tootaio.gameofficialbackend.config;
 
 import com.alibaba.fastjson2.JSON;
-import com.tootaio.gameofficialbackend.entity.RestBean;
+import com.tootaio.gameofficialbackend.entity.bean.RestBean;
 import com.tootaio.gameofficialbackend.service.AuthorizeService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
@@ -37,6 +37,7 @@ public class SecurityConfiguration {
         return security
                 .authorizeHttpRequests()
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/post/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginProcessingUrl("/api/auth/login")

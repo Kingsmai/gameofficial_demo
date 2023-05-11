@@ -11,6 +11,10 @@ export default {
         }
     },
     props: {
+        postId: {
+            type: Number,
+            required: true
+        },
         username: {
             type: String,
             required: true
@@ -22,6 +26,10 @@ export default {
         content: {
             type: String,
             required: true
+        },
+        canDelete: {
+            type: Boolean,
+            required: true,
         }
     },
     methods: {
@@ -36,6 +44,9 @@ export default {
 
             // 提取前六位作为颜色值
             return '#' + hexString.slice(0, 6);
+        },
+        deletePost() {
+            console.log(`删除 PostId 为 ${this.postId} 的帖子`)
         }
     }
 }
@@ -51,14 +62,16 @@ export default {
                 </span>
                 <div style="margin-left: 16px">
                     <div style="font-weight: bold">{{ username }}</div>
-                    <div>发布时间：{{ postTime }}</div>
+                    <div style="font-size: 0.9rem; font-style: italic; color: grey">{{ postTime }}</div>
                 </div>
             </div>
             <div class="post-content">
                 {{ content }}
             </div>
             <div style="margin-top: 10px">
-                <el-button :icon="DeleteFilled" type="danger" link>删除</el-button>
+                <el-button v-if="canDelete" @click="deletePost"
+                           :icon="DeleteFilled" type="danger" link>删除
+                </el-button>
             </div>
         </el-card>
     </div>

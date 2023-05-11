@@ -6,8 +6,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
+    final List<String> PATH_TO_EXCLUDE = List.of(
+            "/api/auth/**",
+            "/api/post/**"
+    );
+
     @Resource
     AuthorizeInterceptor authorizeInterceptor;
 
@@ -17,6 +25,6 @@ public class WebConfiguration implements WebMvcConfigurer {
         registry
                 .addInterceptor(authorizeInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/api/auth/**");
+                .excludePathPatterns(PATH_TO_EXCLUDE);
     }
 }

@@ -1,6 +1,6 @@
 package com.tootaio.gameofficialbackend.controller;
 
-import com.tootaio.gameofficialbackend.entity.RestBean;
+import com.tootaio.gameofficialbackend.entity.bean.RestBean;
 import com.tootaio.gameofficialbackend.entity.UserAccount;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
