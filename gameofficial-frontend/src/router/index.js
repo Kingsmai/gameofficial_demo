@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
+import {useAuthStore} from "@/stores/authStore";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,12 +33,12 @@ const router = createRouter({
             children: [
                 {
                     path: '',
-                    name: 'login',
+                    name: 'welcome-login',
                     component: () => import("@/pages/welcome/LoginPage.vue")
                 },
                 {
                     path: 'register',
-                    name: 'register',
+                    name: 'welcome-register',
                     component: () => import("@/pages/welcome/RegisterPage.vue")
                 }
             ]
@@ -60,6 +61,22 @@ const router = createRouter({
             ]
         }
     ]
+})
+
+router.beforeEach((to, from, next) => {
+    const authStore = useAuthStore();
+    if (authStore.isLoggedIn() && to.name.startsWith("welcome-")) {
+        // 用户已经登录
+        next('/')
+    } else if (!authStore.isAdmin() && to.fullPath.startsWith('/admin')) {
+        // 普通用户访问管理员界面
+        next('/')
+    } else if (to.matched.length === 0) {
+        // 访问不存在的页面
+        next('/')
+    } else {
+        next()
+    }
 })
 
 export default router

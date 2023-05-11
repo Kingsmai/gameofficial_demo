@@ -2,10 +2,19 @@
 
 import {Odometer, Search, User} from "@element-plus/icons-vue";
 import router from "@/router";
-import {ref} from "vue";
+import {useAuthStore} from "@/stores/authStore";
+import {get} from "@/net";
+import {ElMessage} from "element-plus";
 
-// TODO: 搬到 store 那里，或者 auth 之类的
-const isAdmin = ref(true);
+const authStore = useAuthStore();
+
+const logout = () => {
+    get("/api/auth/logout", (message) => {
+        ElMessage.success(message);
+        authStore.clearUserInfo();
+        router.push("/welcome");
+    })
+}
 </script>
 
 <template>
@@ -35,11 +44,14 @@ const isAdmin = ref(true);
                 </div>
             </div>
             <div style="width: 250px; text-align: right;">
-                <el-button :icon="Odometer" @click="router.push('/admin')"
-                           v-if="isAdmin">管理员仪表盘
+                <el-button :icon="Odometer" @click="router.push('/admin')" v-if="authStore.isAdmin()">管理员仪表盘
                 </el-button>
-                <!--                <el-button :icon="User" @click="router.push('/welcome')">登录</el-button>-->
-                <el-button :icon="User" @click="router.push('/welcome')">退出</el-button>
+                <el-button :icon="User" @click="router.push('/welcome')" v-if="!authStore.isLoggedIn()">
+                    登录
+                </el-button>
+                <el-button :icon="User" @click="logout" v-if="authStore.isLoggedIn()">
+                    退出
+                </el-button>
             </div>
         </nav>
         <router-view/>

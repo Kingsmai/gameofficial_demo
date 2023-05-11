@@ -2,6 +2,30 @@
 
 import {Lock, User} from "@element-plus/icons-vue";
 import router from "@/router";
+import {reactive} from "vue";
+import {get, post} from "@/net";
+import {ElMessage} from "element-plus";
+import {useAuthStore} from "@/stores/authStore";
+
+const authStore = useAuthStore();
+
+const form = reactive({
+    username: '',
+    password: ''
+})
+
+const login = () => {
+    post("/api/auth/login", {
+        username: form.username,
+        password: form.password
+    }, (message) => {
+        ElMessage.success(message);
+        get("/api/user/me", (message) => {
+            authStore.setUserInfo(message);
+        })
+        router.push("/");
+    })
+}
 </script>
 
 <template>
@@ -12,13 +36,19 @@ import router from "@/router";
         </div>
         <el-form style="margin-top: 20px">
             <el-form-item>
-                <el-input :prefix-icon="User" placeholder="请输入用户名 / 邮箱"/>
+                <el-input :prefix-icon="User" placeholder="请输入用户名 / 邮箱"
+                          v-model="form.username"/>
             </el-form-item>
             <el-form-item>
-                <el-input :prefix-icon="Lock" placeholder="请输入密码"/>
+                <el-input :prefix-icon="Lock" placeholder="请输入密码"
+                          v-model="form.password"/>
             </el-form-item>
         </el-form>
-        <el-button type="primary" style="width: 100%">登录</el-button>
+        <el-button type="primary"
+                   @click="login"
+                   style="width: 100%">
+            登录
+        </el-button>
         <el-divider>没有账号？</el-divider>
         <el-button type="warning" plain
                    @click="router.push('/welcome/register')"

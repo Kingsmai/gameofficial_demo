@@ -1,7 +1,19 @@
 <script setup>
 import {User} from "@element-plus/icons-vue";
 import router from "@/router";
+import {get} from "@/net";
+import {ElMessage} from "element-plus";
+import {useAuthStore} from "@/stores/authStore";
 
+const authStore = useAuthStore();
+
+const logout = () => {
+    get("/api/auth/logout", (message) => {
+        ElMessage.success(message);
+        authStore.clearUserInfo();
+        router.push("/welcome");
+    })
+}
 </script>
 
 <template>
@@ -13,7 +25,10 @@ import router from "@/router";
                 <span @click="router.push('/admin')">博客管理</span>
             </div>
             <div>
-                <el-button :icon="User" type="danger">退出登录</el-button>
+                <el-button @click="logout"
+                           :icon="User" type="danger">
+                    退出登录
+                </el-button>
             </div>
         </nav>
         <router-view/>

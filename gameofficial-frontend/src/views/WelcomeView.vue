@@ -1,7 +1,4 @@
 <script setup>
-
-import {User, Lock} from "@element-plus/icons-vue";
-import router from "@/router";
 </script>
 
 <template>
