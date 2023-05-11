@@ -2,7 +2,15 @@
 import router from "@/router";
 import {reactive} from "vue";
 import {ElMessage} from "element-plus";
-import {post} from "@/net";
+import {get, post} from "@/net";
+import {useRoute} from "vue-router";
+
+const route = useRoute();
+const blogId = route.query.blogId;
+
+const isEditMode = blogId != null;
+
+ElMessage.info(isEditMode ? "编辑模式" : "新增博客模式")
 
 const form = reactive({
     title: '',
@@ -29,6 +37,34 @@ const sendNewPost = () => {
         router.push("/admin");
     })
 }
+
+const sendUpdatePost = () => {
+    if (form.title.trim() === "" || form.content.trim() === "") {
+        ElMessage.error("内容或标题为空，无法发布新博文")
+        return;
+    }
+    post("api/blog/update", {
+        title: form.title,
+        content: form.content,
+        blogId: blogId
+    }, (message) => {
+        ElMessage.success(message);
+        // 当发布成功，跳转到 博客管理界面
+        router.push("/admin");
+    })
+}
+
+// 获取博客内容
+const getPostInfo = () => {
+    post("/api/blog/get", {
+        blogId: blogId
+    }, (message) => {
+        form.title = message.title;
+        form.content = message.content;
+    })
+}
+
+getPostInfo();
 </script>
 
 <template>
@@ -46,7 +82,8 @@ const sendNewPost = () => {
         </el-form>
         <div style="text-align: right">
             <el-button type="danger" plain @click="quitConfirm">取消</el-button>
-            <el-button type="primary" @click="sendNewPost">发布博客</el-button>
+            <el-button v-if="!isEditMode" type="primary" @click="sendNewPost">发布博客</el-button>
+            <el-button v-if="isEditMode" type="primary" @click="sendUpdatePost">更新博客</el-button>
         </div>
     </div>
 </template>

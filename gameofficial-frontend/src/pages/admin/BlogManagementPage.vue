@@ -35,12 +35,15 @@ getBlogList();
             </el-table-column>
             <el-table-column label="发布时间" width="256">
                 <template #default="scope">
-                    <span>{{ getPostTime(scope.row.postTime)}}</span>
+                    <span>{{ getPostTime(scope.row.postTime) }}</span>
                 </template>
             </el-table-column>
             <el-table-column fixed="right" label="操作" width="128">
-                <template #default>
-                    <el-button link type="primary" size="small" @click="router.push('/admin/post-editor')">
+                <template #default="scope">
+                    <el-button link type="primary" size="small"
+                               @click="router.push({
+                               path: '/admin/post-editor', query: {blogId: scope.row.id}
+                               })">
                         编辑
                     </el-button>
                     <el-button link type="danger" size="small">删除</el-button>

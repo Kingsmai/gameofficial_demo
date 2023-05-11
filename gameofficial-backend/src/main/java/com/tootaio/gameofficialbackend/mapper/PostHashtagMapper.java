@@ -1,5 +1,6 @@
 package com.tootaio.gameofficialbackend.mapper;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -20,7 +21,7 @@ public interface PostHashtagMapper {
     List<String> getHashtagsByCommunityPostId(long communityPostId);
 
     @Insert("INSERT INTO post_hashtag (postId, hashtagId, postType) VALUE (#{blogPostId}, #{hashtagId}, 'blog')")
-    int connectBlogPostAndHashtag(int blogPostId, int hashtagId);
+    int connectBlogPostAndHashtag(long blogPostId, long hashtagId);
 
     @Select("""
             SELECT tagName
@@ -29,4 +30,10 @@ public interface PostHashtagMapper {
             WHERE postId = #{blogPostId}
               AND postType = 'blog'""")
     List<String> getHashtagsByBlogPostId(long blogPostId);
+
+    // 删除某一博客的所有 hashtag
+    @Delete("""
+            DELETE FROM post_hashtag
+            WHERE postId = #{blogPostId} and postType = 'blog'""")
+    int deleteAllHashtagLinkByBlog(long blogPostId);
 }

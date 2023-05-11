@@ -10,5 +10,9 @@ public interface BlogPostService {
 
     String createNewPost(UserAccount user, String title, String content);
 
-    String deletePostById(UserAccount user, int postId);
+    String updatePost(UserAccount user, long postId, String title, String content);
+
+    String deletePostById(UserAccount user, long postId);
+
+    BlogPost getPostById(long postId);
 }

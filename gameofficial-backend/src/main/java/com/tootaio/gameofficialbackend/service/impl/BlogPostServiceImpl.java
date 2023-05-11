@@ -37,7 +37,7 @@ public class BlogPostServiceImpl implements BlogPostService {
     public String createNewPost(UserAccount user, String title, String content) {
         int insertResult = blogPostMapper.createNewPost(user.getId(), title, content);
         if (insertResult < 0) {
-            return "发帖失败，请联系管理员";
+            return "发布博客失败，请联系管理员";
         }
 
         // 获取刚刚插入的 postId
@@ -65,7 +65,38 @@ public class BlogPostServiceImpl implements BlogPostService {
     }
 
     @Override
-    public String deletePostById(UserAccount user, int postId) {
+    public String updatePost(UserAccount user, long postId, String title, String content) {
+        // 更新博客
+        int updateResult = blogPostMapper.updatePost(title, content, postId);
+        if (updateResult < 0) {
+            return "更新博客失败，请联系管理员";
+        }
+        // 删除这个博客的所有 hashtag
+        postHashtagMapper.deleteAllHashtagLinkByBlog(postId);
+
+        // 查询句子中所包含的 hashtag，
+        List<String> extractedHashtags = HashtagExtractor.extract(content);
+
+        // 查重，如果是新的 hashtag，添加到表中
+        for (String hashtag : extractedHashtags) {
+            int checkResult = hashtagMapper.checkHashtagExists(hashtag);
+            if (checkResult == 0) {
+                if (hashtagMapper.createHashtag(hashtag) < 0) {
+                    return "发帖成功，但创建 hashtag 的过程中发生异常";
+                }
+            }
+            // 获取 hashtagId
+            int hashtagId = hashtagMapper.getHashtagId(hashtag);
+            // 再将 postId 和 hashTagId 表添加到 hashtag_post 表中
+            if (postHashtagMapper.connectBlogPostAndHashtag(postId, hashtagId) < 0) {
+                return "发帖成功，但关联 hashtag 的过程中发生异常";
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String deletePostById(UserAccount user, long postId) {
         BlogPost post = blogPostMapper.getPostById(postId);
 
         if (post == null) {
@@ -82,5 +113,10 @@ public class BlogPostServiceImpl implements BlogPostService {
         } else {
             return "内部错误，请联系管理员";
         }
+    }
+
+    @Override
+    public BlogPost getPostById(long blogId) {
+        return blogPostMapper.getPostById(blogId);
     }
 }

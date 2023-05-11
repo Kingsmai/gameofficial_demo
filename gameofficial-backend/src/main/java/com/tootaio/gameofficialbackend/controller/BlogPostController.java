@@ -1,5 +1,6 @@
 package com.tootaio.gameofficialbackend.controller;
 
+import com.alibaba.fastjson2.JSON;
 import com.tootaio.gameofficialbackend.entity.BlogPost;
 import com.tootaio.gameofficialbackend.entity.UserAccount;
 import com.tootaio.gameofficialbackend.entity.bean.RestBean;
@@ -20,11 +21,34 @@ public class BlogPostController {
         return RestBean.success(blogPostService.getAllBlogPost());
     }
 
+    @PostMapping("/get")
+    public RestBean<BlogPost> getBlogById(@RequestParam("blogId") long blogId) {
+        BlogPost blogPost = blogPostService.getPostById(blogId);
+        if (blogPost != null) {
+            return RestBean.success(blogPost);
+        } else {
+            return RestBean.failure();
+        }
+    }
+
     @PostMapping("/post")
     public RestBean<String> createNewPost(@SessionAttribute("account") UserAccount account,
                                           @RequestParam("title") String title,
                                           @RequestParam("content") String content) {
         String errorMessage = blogPostService.createNewPost(account, title, content);
+        if (errorMessage == null) {
+            return RestBean.success("发布成功");
+        } else {
+            return RestBean.failure(errorMessage);
+        }
+    }
+
+    @PostMapping("/update")
+    public RestBean<String> updatePost(@SessionAttribute("account") UserAccount account,
+                                       @RequestParam("blogId") long blogId,
+                                       @RequestParam("title") String title,
+                                       @RequestParam("content") String content) {
+        String errorMessage = blogPostService.updatePost(account, blogId, title, content);
         if (errorMessage == null) {
             return RestBean.success("发布成功");
         } else {
