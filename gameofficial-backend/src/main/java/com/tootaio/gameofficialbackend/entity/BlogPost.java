@@ -3,6 +3,7 @@ package com.tootaio.gameofficialbackend.entity;
 import lombok.Data;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Data
 public class BlogPost {
@@ -11,4 +12,6 @@ public class BlogPost {
     String title;
     Timestamp postTime;
     String content;
+
+    List<String> tags;
 }

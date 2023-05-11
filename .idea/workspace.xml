@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="实现 hashtag 功能">
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/BlogPostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/BlogPost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/BlogPostMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/BlogPostService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/BlogPostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/config/WebConfiguration.java" afterDir="false" />
+    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="修复路由错误跳转 BUG">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/BlogPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/BlogPostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/components/main/CommunityPostItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/components/main/CommunityPostItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/BlogPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/BlogPost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/BlogPostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/BlogPostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/PostHashtagMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/PostHashtagMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/BlogPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/BlogPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/BlogPostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/BlogPostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/components/admin/PostEditor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/components/admin/PostEditor.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,10 +24,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Composition API Component" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -87,11 +87,11 @@
       <recent name="C:\Users\Xiaomai\Documents\IdeaProjects\gameofficial_demo\gameofficial-frontend\src\assets\background" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Xiaomai\Documents\IdeaProjects\gameofficial_demo\gameofficial-frontend\src" />
       <recent name="C:\Users\Xiaomai\Documents\IdeaProjects\gameofficial_demo\gameofficial-frontend\src\assets\carousel" />
       <recent name="C:\Users\Xiaomai\Documents\IdeaProjects\gameofficial_demo\gameofficial-frontend\src\pages\admin" />
       <recent name="C:\Users\Xiaomai\Documents\IdeaProjects\gameofficial_demo\gameofficial-frontend\src\assets\character_drawings" />
       <recent name="C:\Users\Xiaomai\Documents\IdeaProjects\gameofficial_demo\gameofficial-frontend\src\assets" />
-      <recent name="C:\Users\Xiaomai\Documents\IdeaProjects\gameofficial_demo\gameofficial-frontend\src\pages\main" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.GameofficialBackendApplication">
@@ -151,7 +151,7 @@
       <workItem from="1683717428257" duration="171000" />
       <workItem from="1683717858757" duration="735000" />
       <workItem from="1683718603759" duration="8802000" />
-      <workItem from="1683762545597" duration="26647000" />
+      <workItem from="1683762545597" duration="31565000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1683689803177</created>
@@ -258,7 +258,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683788950522</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="显示所有 BlogPost">
+      <created>1683793667922</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1683793667922</updated>
+    </task>
+    <task id="LOCAL-00017" summary="修复路由错误跳转 BUG">
+      <created>1683795271556</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1683795271556</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +302,8 @@
     <MESSAGE value="Code Analysis" />
     <MESSAGE value="增加删除帖子功能" />
     <MESSAGE value="实现 hashtag 功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现 hashtag 功能" />
+    <MESSAGE value="显示所有 BlogPost" />
+    <MESSAGE value="修复路由错误跳转 BUG" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复路由错误跳转 BUG" />
   </component>
 </project>

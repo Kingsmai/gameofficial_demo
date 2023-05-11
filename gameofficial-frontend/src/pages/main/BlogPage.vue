@@ -34,7 +34,7 @@ getBlogList();
                 <blog-item v-for="blog in blogList"
                            :header="blog.title"
                            :post-time="getPostTime(blog.postTime)"
-                           :tags="['开发日志', '程序员日常干架']"
+                           :tags="blog.tags"
                            :content="blog.content"
                 />
             </el-col>

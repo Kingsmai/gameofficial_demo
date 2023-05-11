@@ -18,4 +18,15 @@ public interface PostHashtagMapper {
             WHERE postId = #{communityPostId}
               AND postType = 'community'""")
     List<String> getHashtagsByCommunityPostId(long communityPostId);
+
+    @Insert("INSERT INTO post_hashtag (postId, hashtagId, postType) VALUE (#{blogPostId}, #{hashtagId}, 'blog')")
+    int connectBlogPostAndHashtag(int blogPostId, int hashtagId);
+
+    @Select("""
+            SELECT tagName
+            FROM post_hashtag
+                     JOIN hashtags on post_hashtag.hashtagId = hashtags.id
+            WHERE postId = #{blogPostId}
+              AND postType = 'blog'""")
+    List<String> getHashtagsByBlogPostId(long blogPostId);
 }

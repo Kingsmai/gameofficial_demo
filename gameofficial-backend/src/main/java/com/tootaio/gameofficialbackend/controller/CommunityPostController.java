@@ -20,7 +20,7 @@ public class CommunityPostController {
         return RestBean.success(communityPostService.getAllCommunityPosts());
     }
 
-    @PostMapping("/newPost")
+    @PostMapping("/post")
     public RestBean<String> createNewPost(@SessionAttribute("account") UserAccount account,
                                           @RequestParam("content") String content) {
         String errorMessage = communityPostService.createNewPost(account, content);

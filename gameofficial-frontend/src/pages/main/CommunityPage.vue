@@ -26,7 +26,7 @@ getPostList()
 
 const createNewPost = () => {
     if (form.postContent.trim() !== '') {
-        post('/api/community/newPost', {
+        post('/api/community/post', {
             content: form.postContent
         }, (message) => {
             ElMessage.success(message);
