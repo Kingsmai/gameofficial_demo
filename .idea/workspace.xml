@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="建立搜索界面">
+    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="修改提示类型">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/controller/CommunityPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/bean/RestBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/entity/bean/RestBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/mapper/CommunityPostMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/CommunityPostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-backend/src/main/java/com/tootaio/gameofficialbackend/service/impl/CommunityPostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/pages/welcome/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/pages/welcome/LoginPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +147,11 @@
       <workItem from="1683717428257" duration="171000" />
       <workItem from="1683717858757" duration="735000" />
       <workItem from="1683718603759" duration="8802000" />
-      <workItem from="1683762545597" duration="43244000" />
+      <workItem from="1683762545597" duration="46183000" />
+      <workItem from="1683846321121" duration="539000" />
+      <workItem from="1683850231867" duration="1148000" />
+      <workItem from="1683864388299" duration="3925000" />
+      <workItem from="1683943391007" duration="506000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1683689803177</created>
@@ -324,7 +328,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683807394425</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="社区界面增加翻页功能">
+      <created>1683813072984</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1683813072984</updated>
+    </task>
+    <task id="LOCAL-00027" summary="修改提示类型">
+      <created>1683813515377</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1683813515377</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,6 +381,8 @@
     <MESSAGE value="添加搜索界面" />
     <MESSAGE value="完善侧边栏" />
     <MESSAGE value="建立搜索界面" />
-    <option name="LAST_COMMIT_MESSAGE" value="建立搜索界面" />
+    <MESSAGE value="社区界面增加翻页功能" />
+    <MESSAGE value="修改提示类型" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改提示类型" />
   </component>
 </project>
