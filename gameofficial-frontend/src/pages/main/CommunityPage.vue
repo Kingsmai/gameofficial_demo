@@ -29,6 +29,7 @@ const getPostList = () => {
     }, (message, info) => {
         postList.value = message;
         pageInfo.value = info;
+        window.scrollTo(0, 0);
     })
 }
 
@@ -92,6 +93,18 @@ const handlePageSizeChange = (val) => {
             </el-form>
         </el-card>
 
+        <!-- 分页导航 -->
+        <div style="width: max-content; margin: 32px auto;">
+            <el-pagination background
+                           :total="pageInfo.totalRecords"
+                           v-model:page-size="pageInfo.pageSize"
+                           v-model:current-page="pageInfo.pageNumber"
+                           :page-sizes="[5, 10, 20, 30, 50]"
+                           layout="sizes, prev, pager, next, total"
+                           @current-change="handlePageChange"
+                           @size-change="handlePageSizeChange"/>
+        </div>
+
         <community-post-item v-for="post in postList"
                              :post-id="post.id"
                              :username="post.username"
@@ -100,17 +113,6 @@ const handlePageSizeChange = (val) => {
                              :tags="post.tags"
                              :can-delete="authStore.isAdmin() || authStore.getUserId() === post.userId"
                              @delete="handlePostDelete"/>
-
-        <div style="margin: 32px 0">
-            <el-pagination background
-                           :total="pageInfo.totalRecords"
-                           v-model:page-size="pageInfo.pageSize"
-                           v-model:current-page="pageInfo.pageNumber"
-                           :page-sizes="[5, 10, 20, 30, 50]"
-                           layout="total, sizes, prev, pager, next"
-                           @current-change="handlePageChange"
-                           @size-change="handlePageSizeChange"/>
-        </div>
     </div>
 </template>
 
