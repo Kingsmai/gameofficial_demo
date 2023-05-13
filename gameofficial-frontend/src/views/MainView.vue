@@ -6,10 +6,19 @@ import {useAuthStore} from "@/stores/authStore";
 import {get} from "@/net";
 import {ElMessage} from "element-plus";
 import {ref} from "vue";
+import {useDark, useToggle} from "@vueuse/core";
 
 const authStore = useAuthStore();
 
 const searchContent = ref('');
+
+const isDark = useDark({
+    // selector: "#app",
+    // attribute: "theme",
+    // valueDark: "custom-dark",
+    // valueLight: "custom-light"
+});
+const toggleDark = useToggle(isDark)
 
 const logout = () => {
     get("/api/auth/logout", (message) => {
@@ -60,6 +69,9 @@ const handleSearchBox = (e) => {
                 </div>
             </div>
             <div style="width: 250px; text-align: right;">
+                <el-button :value="isDark" @click="toggleDark()">
+                    {{ isDark ? "浅色" : "深色" }}
+                </el-button>
                 <el-button :icon="Odometer" @click="router.push('/admin')" v-if="authStore.isAdmin()">管理员仪表盘
                 </el-button>
                 <el-button :icon="User" @click="router.push('/welcome')" v-if="!authStore.isLoggedIn()">

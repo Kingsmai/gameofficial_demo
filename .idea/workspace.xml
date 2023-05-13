@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="修改提示类型">
+    <list default="true" id="5eb3170f-b089-48b7-a61a-64b6293f525b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/pages/main/CommunityPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameofficial-frontend/src/pages/welcome/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gameofficial-frontend/src/pages/welcome/LoginPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +146,8 @@
       <workItem from="1683846321121" duration="539000" />
       <workItem from="1683850231867" duration="1148000" />
       <workItem from="1683864388299" duration="3925000" />
-      <workItem from="1683943391007" duration="506000" />
+      <workItem from="1683943391007" duration="4698000" />
+      <workItem from="1683958797095" duration="485000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1683689803177</created>
@@ -342,7 +338,42 @@
       <option name="project" value="LOCAL" />
       <updated>1683813515377</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="曝露给局域网链接">
+      <created>1683944927636</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1683944927636</updated>
+    </task>
+    <task id="LOCAL-00029" summary="曝露给局域网链接">
+      <created>1683944934221</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1683944934221</updated>
+    </task>
+    <task id="LOCAL-00030" summary="更新 README.md">
+      <created>1683944953721</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1683944953721</updated>
+    </task>
+    <task id="LOCAL-00031" summary="修改页面布局，切换页面时，回滚到最上方">
+      <created>1683944976288</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1683944976288</updated>
+    </task>
+    <task id="LOCAL-00032" summary="登录界面密码明文修复">
+      <created>1683944993719</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1683944993719</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,8 +391,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
-    <MESSAGE value="完善前端界面" />
     <MESSAGE value="创建后端项目" />
     <MESSAGE value="创建后端项目，配置 Spring Security" />
     <MESSAGE value="添加注册，登录，修改密码接口" />
@@ -383,6 +412,10 @@
     <MESSAGE value="建立搜索界面" />
     <MESSAGE value="社区界面增加翻页功能" />
     <MESSAGE value="修改提示类型" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改提示类型" />
+    <MESSAGE value="曝露给局域网链接" />
+    <MESSAGE value="更新 README.md" />
+    <MESSAGE value="修改页面布局，切换页面时，回滚到最上方" />
+    <MESSAGE value="登录界面密码明文修复" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录界面密码明文修复" />
   </component>
 </project>

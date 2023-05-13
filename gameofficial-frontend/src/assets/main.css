@@ -3,3 +3,8 @@
 #app {
     scroll-behavior: smooth;
 }
+
+[theme="custom-dark"] {
+    background-color: #16141d;
+    color: #fff;
+}
