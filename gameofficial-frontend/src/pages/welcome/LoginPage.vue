@@ -38,11 +38,13 @@ const login = () => {
         </div>
         <el-form style="margin-top: 20px">
             <el-form-item>
-                <el-input :prefix-icon="User" placeholder="请输入用户名 / 邮箱"
+                <el-input type="email"
+                          :prefix-icon="User" placeholder="请输入用户名 / 邮箱"
                           v-model="form.username"/>
             </el-form-item>
             <el-form-item>
-                <el-input :prefix-icon="Lock" placeholder="请输入密码"
+                <el-input type="password"
+                          :prefix-icon="Lock" placeholder="请输入密码"
                           v-model="form.password"/>
             </el-form-item>
             <el-form-item>
